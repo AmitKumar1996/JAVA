@@ -61,6 +61,30 @@ public class Implementation {
          		
 	}
 	
+	
+	// Remove Last Node
+	
+	public void removeLast() {
+		if(head== null) {
+			System.out.println("list is  Emopty nothing to Delete ");
+			return;
+			
+		}
+		if(head.next==null) {
+			head=null;
+			return;
+		}
+		Node currNode=head;
+		Node lastNode=head.next;
+		while(lastNode.next!=null) {
+			lastNode=lastNode.next;
+			currNode=currNode.next;
+			
+		}
+		currNode.next=null;
+		
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -74,6 +98,8 @@ public class Implementation {
 		imp.addLast("f");
 		imp.printList();
 		imp.removeFirst();
+		imp.printList();
+		imp.removeLast();
 		imp.printList();
 		
 

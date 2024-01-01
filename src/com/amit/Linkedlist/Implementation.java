@@ -51,6 +51,16 @@ public class Implementation {
 		
 	}
 	
+	// Remove First
+	public void removeFirst() {
+		if(head==null) {
+			System.out.println("List is Empty nothing to return");
+		    return;
+		}
+		head=head.next;
+         		
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
@@ -62,6 +72,8 @@ public class Implementation {
 		imp.printList();
 		imp.addLast("e");
 		imp.addLast("f");
+		imp.printList();
+		imp.removeFirst();
 		imp.printList();
 		
 

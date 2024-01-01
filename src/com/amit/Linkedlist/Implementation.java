@@ -4,6 +4,10 @@ public class Implementation {
 	public Node head=null;
 	private int size;
 	
+	Implementation(){
+		this.size=0;
+	}
+	
 
 	public class Node{
 		String data;
@@ -11,6 +15,7 @@ public class Implementation {
 		Node(String data){
 			this.data=data;
 			this.next=null;
+			size++;
 			
 		}
 	}	
@@ -40,6 +45,8 @@ public class Implementation {
 		}
 	      currNode.next=newNode;
 	}
+	
+	
 	// Print List 
 	public void printList() {
 		Node currNode=head;
@@ -53,11 +60,13 @@ public class Implementation {
 	
 	// Remove First
 	public void removeFirst() {
+		size--;
 		if(head==null) {
 			System.out.println("List is Empty nothing to return");
 		    return;
 		}
 		head=head.next;
+		
          		
 	}
 	
@@ -65,11 +74,13 @@ public class Implementation {
 	// Remove Last Node
 	
 	public void removeLast() {
+		
 		if(head== null) {
 			System.out.println("list is  Emopty nothing to Delete ");
 			return;
 			
 		}
+		size--;
 		if(head.next==null) {
 			head=null;
 			return;
@@ -83,6 +94,13 @@ public class Implementation {
 		}
 		currNode.next=null;
 		
+		
+	}
+	
+	
+	// Calculate size
+	public int getSize() {
+		return size;
 	}
 	
 	public static void main(String[] args) {
@@ -90,6 +108,7 @@ public class Implementation {
 		
 		Implementation imp=new Implementation();
 		imp.addfirst("a");
+	//	System.out.println(imp.getSize());
 		imp.addfirst("b");
 		imp.addfirst("c");
 		imp.addfirst("d");
@@ -101,6 +120,8 @@ public class Implementation {
 		imp.printList();
 		imp.removeLast();
 		imp.printList();
+		
+		System.out.println(imp.getSize());
 		
 
 	}
